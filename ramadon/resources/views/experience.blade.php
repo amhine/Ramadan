@@ -12,7 +12,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center">
-                    <span class="text-2xl font-bold">🌙 Ramadan 2025</span>
+                    <span class="text-2xl font-bold">🌙 Ramadan </span>
                 </a>
                 <div class="flex space-x-8">
                     <a href="/recettes" class="hover:text-green-200">Recettes</a>

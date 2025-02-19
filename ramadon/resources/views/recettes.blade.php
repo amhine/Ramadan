@@ -12,7 +12,7 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center">
-                    <span class="text-2xl font-bold">🌙 Ramadan 2025</span>
+                    <span class="text-2xl font-bold">🌙 Ramadan </span>
                 </a>
                 <div class="flex space-x-8">
                     <a href="/recettes" class="font-bold underline">Recettes</a>
@@ -29,9 +29,11 @@
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex space-x-4">
                     <button class="bg-white text-green-600 px-4 py-2 rounded-full">Toutes</button>
-                    <button class="text-white hover:bg-green-600 px-4 py-2 rounded-full">Entrées</button>
-                    <button class="text-white hover:bg-green-600 px-4 py-2 rounded-full">Plats</button>
-                    <button class="text-white hover:bg-green-600 px-4 py-2 rounded-full">Desserts</button>
+                    @foreach($categories as $categorie)
+                        <button class="text-white hover:bg-green-600 px-4 py-2 rounded-full">
+                            {{ $categorie->name }}
+                        </button>
+                    @endforeach
                 </div>
                 <button class="bg-white text-green-600 px-6 py-2 rounded-full hover:bg-green-50">
                     + Ajouter une recette
