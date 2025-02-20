@@ -25,72 +25,73 @@
 
     <!-- En-tête avec bouton de partage -->
     <div class="py-6">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-end items-center">
-            <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-50">
-                + Partagez votre expérience
-            </button>
+        <div class="container mx-auto px-4">
+            <div class="flex justify-end items-center">
+                <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-50">
+                    + Partagez votre expérience
+                </button>
+            </div>
         </div>
     </div>
-</div>
-
 
     <!-- Section principale des expériences -->
     <main class="container mx-auto px-4 py-8">
-        
         <!-- Liste des expériences partagées -->
         <div class="space-y-6">
-            <!-- Post 1 -->
-            <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <img src="/api/placeholder/40/40" alt="Avatar" class="w-10 h-10 rounded-full"/>
-                        <div class="ml-3">
-                            <h3 class="font-bold">Ahmed Benali</h3>
-                            <p class="text-sm text-gray-500">Publié il y a 2 jours</p>
-                        </div>
-                    </div>
-                    <h2 class="text-xl font-bold mb-4">Mon premier jour de Ramadan</h2>
-                    <p class="text-gray-600 mb-4">
-                        Cette année, j'ai vécu une expérience spirituelle particulièrement enrichissante...
-                    </p>
-                    <img src="/api/placeholder/800/400" alt="Experience" class="w-full rounded-lg mb-4"/>
-                    
-                   
-
-                    <!-- Commentaires -->
-                    <div class="border-t pt-4">
-                        <h4 class="font-semibold mb-4">Commentaires</h4>
-                        <!-- Commentaire existant -->
-                        <div class="mb-4 pl-4 border-l-2 border-green-200">
-                            <div class="flex items-center mb-2">
-                                <img src="/api/placeholder/32/32" alt="Avatar" class="w-8 h-8 rounded-full"/>
-                                <div class="ml-3">
-                                    <p class="font-semibold">Sophia</p>
-                                    <p class="text-sm text-gray-500">Il y a 1 jour</p>
-                                </div>
+            @foreach($experiences as $experience)
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <!-- Informations de l'utilisateur -->
+                        <div class="flex items-center mb-4">
+                            <img src="{{ $experience->image_user }}" alt="Avatar" class="w-10 h-10 rounded-full"/>
+                            <div class="ml-3">
+                                <h3 class="font-bold">{{ $experience->nom_user }}</h3>
+                                <p class="text-sm text-gray-500">Publié  a {{ $experience->created_at->format('d/m/Y H:i') }}</p>
                             </div>
-                            <p class="text-gray-600 ml-11">Merci de partager cette belle expérience !</p>
                         </div>
 
-                        <!-- Formulaire nouveau commentaire -->
-                        <form class="flex items-start space-x-2">
-                            <img src="/api/placeholder/32/32" alt="Votre avatar" class="w-8 h-8 rounded-full"/>
-                            <input type="text" 
-                                   placeholder="Ajouter un commentaire..." 
-                                   class="flex-1 border rounded-lg p-2"/>
-                            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-                                Commenter
-                            </button>
-                        </form>
+                        <!-- Titre et description de l'expérience -->
+                        <h2 class="text-xl font-bold mb-4">{{ $experience->titre }}</h2>
+                        <p class="text-gray-600 mb-4">{{ $experience->description }}</p>
+
+                        <!-- Image de l'expérience -->
+                        @if($experience->image)
+                            <img src="{{ $experience->image }}" alt="Experience" class="w-full rounded-lg mb-4"/>
+                        @endif
+
+                        <!-- Commentaires -->
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold mb-4">Commentaires</h4>
+
+                            <!-- Liste des commentaires -->
+                            @foreach($experience->comments as $comment)
+                                <div class="mb-4 pl-4 border-l-2 border-green-200">
+                                    <div class="flex items-center mb-2">
+                                        <img src="{{ $comment->image_user }}" alt="Avatar" class="w-8 h-8 rounded-full"/>
+                                        <div class="ml-3">
+                                            <p class="font-semibold">{{ $comment->nom_user }}</p>
+                                            <p class="text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 ml-11">{{ $comment->contenu }}</p>
+                                </div>
+                            @endforeach
+
+                            <!-- Formulaire nouveau commentaire -->
+                            <form class="flex items-start space-x-2">
+                                <img src="/api/placeholder/32/32" alt="Votre avatar" class="w-8 h-8 rounded-full"/>
+                                <input type="text" 
+                                       placeholder="Ajouter un commentaire..." 
+                                       class="flex-1 border rounded-lg p-2"/>
+                                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                                    Commenter
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </article>
-
-            
+                </article>
+            @endforeach
         </div>
-
-        
     </main>
 
     <!-- Footer -->

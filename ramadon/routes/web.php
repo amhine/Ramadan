@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\RecettesController;
-
-Route::get('/recettes', [CategorieController::class, 'index']);
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\RecetteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +14,10 @@ Route::get('/recettes', [CategorieController::class, 'index']);
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/recettes', [RecetteController::class, 'index']);
+Route::get('/formrecettes', [RecetteController::class, 'create']);
+
+Route::get('/experiences', [ExperienceController::class, 'index']);
 
 Route::get('/', function () {
  return view('welcome');

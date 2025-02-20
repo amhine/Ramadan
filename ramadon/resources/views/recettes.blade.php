@@ -46,39 +46,23 @@
     <main class="container mx-auto px-4 py-8">
         <!-- Grille des recettes -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Carte de recette 1 -->
-            <article class="bg-white rounded-lg shadow-md overflow-hidden">
-    <img src="/api/placeholder/400/300" alt="Traditional Chebakia cookies drizzled with honey" class="w-full h-56 object-cover"/>
-    <div class="p-6">
-        <div class="flex justify-between items-start mb-4">
-            <header>
-                <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">Dessert</span>
-                <h3 class="text-xl font-bold mt-2 mb-2">Chebakia au Miel</h3>
-            </header>
+            @foreach($recettes as $recette)
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ $recette->image }}" alt="{{ $recette->titre }}" class="w-full h-56 object-cover"/>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <header>
+                                <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">
+                                    {{ $recette->categorie->name }}
+                                </span>
+                                <h3 class="text-xl font-bold mt-2 mb-2">{{ $recette->titre }}</h3>
+                            </header>
+                        </div>
+                        <p class="text-gray-600 mb-4">{{ $recette->contenu }}</p>
+                    </div>
+                </article>
+            @endforeach
         </div>
-        
-        <p class="text-gray-600 mb-4">Délicieux gâteaux traditionnels en forme de fleur, parfaits à déguster avec du thé marocain.</p>
-    </div>
-</article>
-
-            <!-- Carte de recette 2 -->
-            <article class="bg-white rounded-lg shadow-md overflow-hidden">
-    <img src="/api/placeholder/400/300" alt="Traditional Chebakia cookies drizzled with honey" class="w-full h-56 object-cover"/>
-    <div class="p-6">
-        <div class="flex justify-between items-start mb-4">
-            <header>
-                <span class="bg-green-100 text-green-600 text-sm px-3 py-1 rounded-full">Dessert</span>
-                <h3 class="text-xl font-bold mt-2 mb-2">Chebakia au Miel</h3>
-            </header>
-        </div>
-        
-        <p class="text-gray-600 mb-4">Délicieux gâteaux traditionnels en forme de fleur, parfaits à déguster avec du thé marocain.</p>
-    </div>
-</article>
-
-        </div>
-
-     
     </main>
 
     <!-- Footer -->
