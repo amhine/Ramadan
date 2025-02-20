@@ -16,6 +16,7 @@ use App\Http\Controllers\RecetteController;
 */
 Route::get('/recettes', [RecetteController::class, 'index']);
 Route::get('/formrecettes', [RecetteController::class, 'create']);
+Route::post('/formstor', [RecetteController::class, 'store']);  
 
 Route::get('/experiences', [ExperienceController::class, 'index']);
 

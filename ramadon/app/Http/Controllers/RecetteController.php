@@ -25,18 +25,23 @@ class RecetteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titre' => 'required|string|max:255',
+            'titre' => 'required|string',
             'contenu' => 'required|string',
             'image' => 'nullable|string',
-            'id_categorie' => 'required|exists:categories,id',
+            'id_categorie' => 'required|exists:categorie,id',
         ]);
+    
+        Recette::create([
+            'titre' => $request->input('titre'),
+            'contenu' => $request->input('contenu'),
+            'image' => $request->input('image'),
+            'id_categorie' => $request->input('id_categorie'),
+        ]);
+    
+        return redirect('/recettes')->with('success', 'Recette créée avec succès.');
 
-        recette::create($request->all());
-
-        return redirect()->route('recettes.index')
-                         ->with('success', 'Recette créée avec succès.');
     }
-
+    
    
 
   

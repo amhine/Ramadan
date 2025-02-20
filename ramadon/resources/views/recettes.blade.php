@@ -35,9 +35,12 @@
                         </button>
                     @endforeach
                 </div>
-                <button class="bg-white text-green-600 px-6 py-2 rounded-full hover:bg-green-50">
-                    + Ajouter une recette
-                </button>
+                <a href="/formrecettes">
+                    <button  class="bg-white text-green-600 px-6 py-2 rounded-full hover:bg-green-50">
+                        + Ajouter une recette
+                    </button>
+                </a>
+                
             </div>
         </div>
     </div>

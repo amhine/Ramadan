@@ -13,17 +13,17 @@
     <h2 class="text-xl font-bold mb-4">Partagez votre expérience</h2>
     <form>
         <div class="mb-4">
-            <input type="text" 
+            <input type="text" id=""
                    placeholder="Titre de votre témoignage" 
                    class="w-full p-3 border rounded-lg"/>
         </div>
         <div class="mb-4">
-            <input type="text" 
+            <input type="text" id=""
                    placeholder="Image" 
                    class="w-full p-3 border rounded-lg"/>
         </div>
         <div class="mb-4">
-            <textarea rows="4" 
+            <textarea rows="4" id=""
                       placeholder="Partagez votre expérience..." 
                       class="w-full p-3 border rounded-lg"></textarea>
         </div>
