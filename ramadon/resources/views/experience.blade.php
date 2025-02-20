@@ -27,9 +27,12 @@
     <div class="py-6">
         <div class="container mx-auto px-4">
             <div class="flex justify-end items-center">
-                <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-50">
-                    + Partagez votre expérience
-                </button>
+                <a href="/formexperience">
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-full ">
+                        + Partagez votre expérience
+                    </button>
+                </a>
+                
             </div>
         </div>
     </div>
@@ -56,7 +59,7 @@
 
                         <!-- Image de l'expérience -->
                         @if($experience->image)
-                            <img src="{{ $experience->image }}" alt="Experience" class="w-full rounded-lg mb-4"/>
+                            <img src="{{ $experience->image }}" alt="Experience" class="w-full h-80 rounded-lg mb-4"/>
                         @endif
 
                         <!-- Commentaires -->
@@ -70,23 +73,25 @@
                                         <img src="{{ $comment->image_user }}" alt="Avatar" class="w-8 h-8 rounded-full"/>
                                         <div class="ml-3">
                                             <p class="font-semibold">{{ $comment->nom_user }}</p>
-                                            <p class="text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
+                                            <p class="text-sm text-gray-500">{{ $comment->created_at->format('d/m/Y H:i') }}</p>
                                         </div>
                                     </div>
-                                    <p class="text-gray-600 ml-11">{{ $comment->contenu }}</p>
+                                    <p class="text-gray-600 ml-11">{{ $comment->description }}</p>
                                 </div>
                             @endforeach
 
                             <!-- Formulaire nouveau commentaire -->
-                            <form class="flex items-start space-x-2">
+                            <div class="flex items-start space-x-2">
                                 <img src="/api/placeholder/32/32" alt="Votre avatar" class="w-8 h-8 rounded-full"/>
                                 <input type="text" 
                                        placeholder="Ajouter un commentaire..." 
                                        class="flex-1 border rounded-lg p-2"/>
-                                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-                                    Commenter
-                                </button>
-                            </form>
+                                       <a href="/formcomment/{{ $experience->id }}">
+                                           <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                                                Commenter
+                                            </button>
+                                       </a>
+                            </div>
                         </div>
                     </div>
                 </article>

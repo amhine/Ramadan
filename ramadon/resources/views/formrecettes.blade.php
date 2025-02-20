@@ -12,7 +12,7 @@
 <div class="bg-white rounded-lg shadow-md p-6 mb-8 w-full max-w-lg">
     <h2 class="text-xl font-bold mb-4">Partagez votre Recette</h2>
 
-    <form action="{{ url('/formstor') }}" method="POST">
+    <form action="/formstor" method="POST">
         @csrf 
         <div class="mb-4">
             <input type="text" id="titre" name="titre" placeholder="Titre de votre Recette" 

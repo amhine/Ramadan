@@ -10,8 +10,8 @@
     
 <!-- Formulaire de création de post -->
 <div class="bg-white rounded-lg shadow-md p-6 mb-8 w-full max-w-lg">
-    <h2 class="text-xl font-bold mb-4">Partagez votre expérience</h2>
-    <form action="/exformstor" method="POST">
+    <h2 class="text-xl font-bold mb-4">Commenter</h2>
+    <form action="/comment" method="POST">
         @csrf 
         <div class="mb-4">
             <input type="text" name="nom_user"
@@ -23,22 +23,14 @@
                    placeholder="Votre Image" 
                    class="w-full p-3 border rounded-lg"/>
         </div>
-        <div class="mb-4">
-            <input type="text" name="titre"
-                   placeholder="Titre de votre expérience" 
-                   class="w-full p-3 border rounded-lg"/>
-        </div>
-      
+        <input type="hidden" name="id_experience" value="{{ $experience->id }}">
+        
         <div class="mb-4">
             <textarea rows="4" name="description"
                       placeholder="Partagez votre expérience..." 
                       class="w-full p-3 border rounded-lg"></textarea>
         </div>
-        <div class="mb-4">
-            <input type="text" name="image"
-                   placeholder=" Image de votre experience" 
-                   class="w-full p-3 border rounded-lg"/>
-        </div>
+       
        
         <div class="flex justify-end">
             <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
