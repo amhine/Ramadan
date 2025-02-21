@@ -18,7 +18,7 @@
                 <div class="flex space-x-8">
                     <a href="/recettes" class="font-bold ">Recettes</a>
                     <a href="/experiences" class="hover:text-green-200">Expériences</a>
-                    <a href="/statistiques" class="hover:text-green-200 underline">Statistiques</a>
+                    <a href="/statistique" class="hover:text-green-200 underline">Statistiques</a>
                 </div>
             </div>
         </div>
@@ -29,15 +29,15 @@
             <h2 class="text-2xl font-bold mb-8">Statistiques</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-3xl font-bold text-green-600">152</div>
+                    <div class="text-3xl font-bold text-green-600">{{ $totalPublications }}</div>
                     <div class="text-gray-600">Publications</div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-3xl font-bold text-green-600">89</div>
+                    <div class="text-3xl font-bold text-green-600">{{ $totalRecettes }}</div>
                     <div class="text-gray-600">Recettes</div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-3xl font-bold text-green-600">1,234</div>
+                    <div class="text-3xl font-bold text-green-600">{{ $totalCommentaires }}</div>
                     <div class="text-gray-600">Commentaires</div>
                 </div>
             </div>

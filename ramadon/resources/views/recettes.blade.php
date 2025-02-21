@@ -17,7 +17,7 @@
                 <div class="flex space-x-8">
                     <a href="/recettes" class="font-bold underline">Recettes</a>
                     <a href="/experiences" class="hover:text-green-200">Expériences</a>
-                    <a href="/statistiques" class="hover:text-green-200">Statistiques</a>
+                    <a href="/statistique" class="hover:text-green-200">Statistiques</a>
                 </div>
             </div>
         </div>
@@ -29,11 +29,11 @@
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex space-x-4">
                     <button class="bg-white text-green-600 px-4 py-2 rounded-full">Toutes</button>
-                    @foreach($categories as $categorie)
-                        <button class="text-white hover:bg-green-600 px-4 py-2 rounded-full">
-                            {{ $categorie->name }}
-                        </button>
-                    @endforeach
+                    <div class="flex space-x-6 py-3">
+                        <a href="/recettes/entrees" class="text-white hover:text-green-200">Entrées</a>
+                        <a href="/recettes/plats" class="text-white hover:text-green-200">Plats</a>
+                        <a href="/recettes/desserts" class="text-white hover:text-green-200">Desserts</a>
+                    </div>
                 </div>
                 <a href="/formrecettes">
                     <button  class="bg-white text-green-600 px-6 py-2 rounded-full hover:bg-green-50">

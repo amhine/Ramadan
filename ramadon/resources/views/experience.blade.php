@@ -17,7 +17,7 @@
                 <div class="flex space-x-8">
                     <a href="/recettes" class="hover:text-green-200">Recettes</a>
                     <a href="/experiences" class="font-bold underline">Expériences</a>
-                    <a href="/statistiques" class="hover:text-green-200">Statistiques</a>
+                    <a href="/statistique" class="hover:text-green-200">Statistiques</a>
                 </div>
             </div>
         </div>
@@ -82,7 +82,6 @@
 
                             <!-- Formulaire nouveau commentaire -->
                             <div class="flex items-start space-x-2">
-                                <img src="/api/placeholder/32/32" alt="Votre avatar" class="w-8 h-8 rounded-full"/>
                                 <input type="text" 
                                        placeholder="Ajouter un commentaire..." 
                                        class="flex-1 border rounded-lg p-2"/>
