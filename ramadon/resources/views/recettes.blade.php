@@ -28,7 +28,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap items-center justify-between">
                 <div class="flex space-x-4">
-                    <button class="bg-white text-green-600 px-4 py-2 rounded-full">Toutes</button>
+                    <a href="/recettes" class="bg-white text-green-600 px-4 py-2 rounded-full">Toutes</a>
                     <div class="flex space-x-6 py-3">
                         <a href="/recettes/entrees" class="text-white hover:text-green-200">Entrées</a>
                         <a href="/recettes/plats" class="text-white hover:text-green-200">Plats</a>

@@ -18,6 +18,10 @@ use App\Http\Controllers\StatistiqueController;
 Route::get('/recettes', [RecetteController::class, 'index']);
 Route::get('/formrecettes', [RecetteController::class, 'create']);
 Route::post('/formstor', [RecetteController::class, 'store']);  
+Route::get('/recettes/entrees', [RecetteController::class, 'entrees']);
+Route::get('/recettes/plats', [RecetteController::class, 'plats']);
+Route::get('/recettes/desserts', [RecetteController::class, 'desserts']);
+
 
 Route::get('/experiences', [ExperienceController::class, 'index']);
 Route::get('/formexperience', [ExperienceController::class, 'create']);

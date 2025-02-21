@@ -42,11 +42,32 @@ class RecetteController extends Controller
 
     }
     
-   
+    public function entrees()
+    {
+        $recettes = Recette::whereHas('categorie', function($query) {$query->where('name', 'Entrées'); })->get();
 
-  
+        $categories = Categorie::all();
 
-   
+        return view('recettes', compact('recettes', 'categories'));
+    }
+
+    public function plats()
+    {
+        $recettes = Recette::whereHas('categorie', function($query) {$query->where('name', 'Plats'); })->get();
+
+        $categories = Categorie::all();
+
+        return view('recettes', compact('recettes', 'categories'));
+    }
+
+    public function desserts()
+    {
+        $recettes = Recette::whereHas('categorie', function($query) {$query->where('name', 'Desserts'); })->get();
+
+        $categories = Categorie::all();
+
+        return view('recettes', compact('recettes', 'categories'));
+    }
 
     
 }
